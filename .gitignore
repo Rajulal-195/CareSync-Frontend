@@ -1,0 +1,9 @@
+node_modules
+dist
+coverage
+*.log
+
+# Real environment files are never committed; only the example is tracked.
+.env
+.env.*
+!.env.example

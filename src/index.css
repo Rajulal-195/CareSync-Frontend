@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Emerald & Sage design tokens (RGB triplets so Tailwind alpha works) ---------- */
+:root {
+  --color-page: 246 250 247;        /* #F6FAF7 */
+  --color-surface: 255 255 255;     /* #FFFFFF */
+  --color-primary: 4 120 87;        /* #047857 */
+  --color-primary-hover: 6 95 70;   /* #065F46 */
+  --color-primary-fg: 255 255 255;
+  --color-sage: 167 205 181;        /* #A7CDB5 */
+  --color-text: 36 53 44;           /* #24352C */
+  --color-text-muted: 96 113 102;   /* #607166 */
+  --color-border: 220 231 223;      /* #DCE7DF */
+  --color-soft: 232 244 236;        /* #E8F4EC */
+  --color-success: 21 128 61;       /* #15803D */
+  --color-warning: 180 83 9;        /* #B45309 */
+  --color-danger: 185 28 28;        /* #B91C1C */
+  --color-forest: 20 51 38;         /* sidebar forest green */
+}
+
+@layer base {
+  html { color-scheme: light; }
+  body {
+    @apply bg-page text-ink font-sans antialiased;
+    margin: 0;
+  }
+  h1, h2, h3 { @apply text-ink; }
+  :focus-visible {
+    outline: 2px solid rgb(var(--color-primary));
+    outline-offset: 2px;
+  }
+  ::selection { background: rgb(var(--color-sage) / 0.5); }
+}
+
+@layer components {
+  .card { @apply rounded-xl2 border border-line bg-surface shadow-card; }
+  .field-label { @apply mb-1.5 block text-sm font-medium text-ink; }
+  .field-input {
+    @apply block w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm text-ink
+      placeholder:text-muted/70 transition-colors
+      focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/25
+      disabled:cursor-not-allowed disabled:bg-soft/60 disabled:text-muted;
+  }
+  .field-input[aria-invalid='true'] { @apply border-danger focus:ring-danger/25; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

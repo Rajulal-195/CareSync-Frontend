@@ -53,7 +53,7 @@ export default function LoginPage() {
           <span className="text-xl font-semibold">CareSync</span>
         </div>
         <div>
-          <h2 className="max-w-md text-3xl font-semibold leading-tight">Calm, fast appointment management for your whole care team.</h2>
+          <h2 className="max-w-md text-3xl font-semibold text-sage leading-tight">Calm, fast appointment management for your whole care team.</h2>
           <p className="mt-3 max-w-md text-sage">Scheduling, arrivals and consultations in one secure workspace.</p>
         </div>
         <p className="flex items-center gap-2 text-sm text-sage"><ShieldCheck className="h-4 w-4" aria-hidden /> Role-based access · Session secured by HttpOnly cookies</p>
